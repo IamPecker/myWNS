@@ -167,21 +167,21 @@
                 <User>${mail.username}</User>
                 <Passwd>${mail.password}</Passwd>
                 <Sender>${mail.sender.address}</Sender>
-                <Authenticate>${mail.authenticate}</Authenticate>
+                <Authenticate>true</Authenticate>
                 <Port>${mail.port}</Port>
                 <EmailSubject>${mail.subject}</EmailSubject>
-                <SSL>${mail.ssl.enable}</SSL>
-                <TLS>${mail.starttls.enable}</TLS>
+                <SSL>false</SSL>
+                <TLS>true</TLS>
 			</SMTP>
 		</EMailHandler>
 		<!--The settings for the XMPP account -->
-		<!-- <XMPPHandler>			
+		 <XMPPHandler>
 			<Provider>org.n52.wns.xmpp.XMPPHandlerJabber</Provider>
 			<User>xmppjabbername</User>
 			<Passwd>xmppjabberpassword</Passwd>
 			<Host>jabber.org</Host>
 			<Port>5222</Port>
-		</XMPPHandler> -->
+		</XMPPHandler>
 		<!--The settings to send SMS-->
 		<!--<SMSHandler>			
 			<Provider>org.n52.wns.sms.SMSHandlerEcall</Provider>

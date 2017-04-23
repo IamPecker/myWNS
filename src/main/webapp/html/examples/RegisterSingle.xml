@@ -9,9 +9,6 @@
 			<XMPP>testuser@jabber.example.com</XMPP>
 			<HTTP>http://www.example.com</HTTP>
 			<Email>testuser@example.com</Email>
-			<SMS>+491234567890</SMS>
-			<Phone>+494294967295</Phone>
-			<Fax>+494294967295</Fax>
 		</CommunicationProtocol>
 	</SingleUser>
 </Register>

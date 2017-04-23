@@ -144,7 +144,7 @@
 							<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
 						</manifest>
 						<manifestEntries>
-							<Implementation-Revision>${buildNumber}</Implementation-Revision>
+							<Implementation-Revision></Implementation-Revision>
 						</manifestEntries>
 					</archive>
 				</configuration>
@@ -318,23 +318,23 @@
 					PROJECT, COPY build-example.properties to ${user.home}/build.properties CUSTOMIZE 
 					PROPERTIES AND TRIGGER MAVEN BUILD WITH `mvn install -Denv=dev'. -->
 				<config.logger.fileappender.filepath>
-					${catalina.home:-.}/logs/${project.artifactId}-${project.version}
+					/logs/${project.artifactId}-${project.version}
 				</config.logger.fileappender.filepath>
 				<config.logger.level>DEBUG</config.logger.level>
 				<config.logger.consoleappender.level>DEBUG</config.logger.consoleappender.level>
 				<config.logger.fileappender.level>WARN</config.logger.fileappender.level>
 
-				<org.n52.wns.external.url>http://localhost:8080/${applicationName}/wns</org.n52.wns.external.url>
+				<org.n52.wns.external.url>http://localhost:8000/${applicationName}/wns</org.n52.wns.external.url>
 
 				<org.n52.database.url>xmldb:exist://localhost:8080/exist/xmlrpc/db/</org.n52.database.url>
 				<org.n52.database.name>52nWNSMessages</org.n52.database.name>
 				<org.n52.database.username>admin</org.n52.database.username>
-				<org.n52.database.password>admin</org.n52.database.password>
+				<org.n52.database.password>truman</org.n52.database.password>
 
-				<mail.username>WNS_MAIL_USER</mail.username>
-				<mail.password>WNS_MAIL_PASSWORD</mail.password>
-				<mail.sender.address>some@address.net</mail.sender.address>
-				<mail.smtp.host>WNS_MAIL_SMTP_HOST</mail.smtp.host>
+				<mail.username>xiangbaoqing2010@163.com</mail.username>
+				<mail.password>13043019910213</mail.password>
+				<mail.sender.address>xiangbaoqing2010@163.com</mail.sender.address>
+				<mail.smtp.host>smtp.163.com</mail.smtp.host>
 				<mail.subject>52n Web Notification Service</mail.subject>
 				<mail.starttls.enable>true</mail.starttls.enable>
 				<mail.port>25</mail.port>
@@ -358,10 +358,10 @@
 		</profile>
 
 
-		<profile>
+<!--		<profile>
 			<id>release</id>
-			<!-- a profile which shall be activated if a release is performed, it 
-				is also automatic activated in the ci environment. -->
+			&lt;!&ndash; a profile which shall be activated if a release is performed, it
+				is also automatic activated in the ci environment. &ndash;&gt;
 			<activation>
 				<property>
 					<name>env</name>
@@ -373,10 +373,10 @@
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-release-plugin</artifactId>
-						<version>2.4</version>
+						<version>2.6</version>
 						<configuration>
-							<!-- no build in release:prepare (takes to long time), so in bad cases 
-								release fails on perform -->
+							&lt;!&ndash; no build in release:prepare (takes to long time), so in bad cases
+								release fails on perform &ndash;&gt;
 							<preparationGoals>clean</preparationGoals>
 							<autoVersionSubmodules>true</autoVersionSubmodules>
 							<tagBase>https://svn.52north.org/svn/swe/main/WNS/Service/tags</tagBase>
@@ -388,32 +388,8 @@
 					</plugin>
 				</plugins>
 			</build>
-		</profile>
-		
-		<profile>
-			<id>create-license-list</id>
-			<build>
-				<plugins>
-				  <plugin>
-					<groupId>org.codehaus.mojo</groupId>
-					<artifactId>license-maven-plugin</artifactId>
-					<configuration>
-						<useMissingFile>true</useMissingFile>
-						<fileTemplate>misc/license-as-csv.ftl</fileTemplate>
-					</configuration>
-					<executions>
-					  <execution>
-						<id>first</id>
-						<goals>
-						  <goal>aggregate-add-third-party</goal>
-						</goals>
-						<phase>generate-resources</phase>
-					  </execution>
-					</executions>
-				  </plugin>
-				</plugins>
-			</build>
-		</profile>
+		</profile>-->
+
 
 	</profiles>
 

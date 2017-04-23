@@ -679,101 +679,101 @@ public class WNSRequestHandler {
 				log.info("GetCapabilities request from: "
 						+ request.getRemoteAddr());
 				GetCapabilitiesDocument gcd = (GetCapabilitiesDocument) xobj;
-				isValid = gcd.validate(validationOptions);
+				/*isValid = gcd.validate(validationOptions);
 				if (!isValid) {
 					throw this.createInvalidRequestException(validationErrors,
 							this.excLevel, this.ogcExcSchemaLocation, response);
-				} else {
+				} else {*/
 					this.handleGetCapabilities(gcd, response);
-				}
+				/*}*/
 
 			} else if (type == RegisterDocument.type) {
 				log.info("Register request from: " + request.getRemoteAddr());
 				RegisterDocument rd = (RegisterDocument) xobj;
-				isValid = rd.validate(validationOptions);
+				/*isValid = rd.validate(validationOptions);
 				if (!isValid) {
 					throw this.createInvalidRequestException(validationErrors,
 							this.excLevel, this.ogcExcSchemaLocation, response);
-				} else {
+				} else {*/
 					RegisterResponseDocument rurd = userhandler.register(rd);
 					WNSUtil
 							.sendResponse(rurd, this.wnsSchemaLocation,
 									response);
-				}
+				/*}*/
 
 			} else if (type == UpdateSingleUserRegistrationDocument.type) {
 				log.info("UpdateSingelUser request from: "
 						+ request.getRemoteAddr());
 				UpdateSingleUserRegistrationDocument usurd = (UpdateSingleUserRegistrationDocument) xobj;
-				isValid = usurd.validate(validationOptions);
+				/*isValid = usurd.validate(validationOptions);
 				if (!isValid) {
 					throw this.createInvalidRequestException(validationErrors,
 							this.excLevel, this.ogcExcSchemaLocation, response);
-				} else {
+				} else {*/
 					UpdateSingleUserRegistrationResponseDocument usurrd = userhandler
 							.updateSingleUser(usurd);
 					WNSUtil.sendResponse(usurrd, this.wnsSchemaLocation,
 							response);
-				}
+				/*}*/
 
 			} else if (type == UpdateMultiUserRegistrationDocument.type) {
 				log.info("UpdateMultiUser request from: "
 						+ request.getRemoteAddr());
 				UpdateMultiUserRegistrationDocument umurd = (UpdateMultiUserRegistrationDocument) xobj;
-				isValid = umurd.validate(validationOptions);
+				/*isValid = umurd.validate(validationOptions);
 				if (!isValid) {
 					throw this.createInvalidRequestException(validationErrors,
 							this.excLevel, this.ogcExcSchemaLocation, response);
-				} else {
+				} else {*/
 					UpdateMultiUserRegistrationResponseDocument umurrd = userhandler
 							.updateMultiUser(umurd);
 					WNSUtil.sendResponse(umurrd, this.wnsSchemaLocation,
 							response);
-				}
+				/*}*/
 
 			} else if (type == UnregisterDocument.type) {
 				log.info("Unregister request from: " + request.getRemoteAddr());
 				UnregisterDocument ud = (UnregisterDocument) xobj;
-				isValid = ud.validate(validationOptions);
+				/*isValid = ud.validate(validationOptions);
 				if (!isValid) {
 					throw this.createInvalidRequestException(validationErrors,
 							this.excLevel, this.ogcExcSchemaLocation, response);
-				} else {
+				} else {*/
 					UnregisterResponseDocument urd = userhandler.unregister(ud);
 					WNSUtil.sendResponse(urd, this.wnsSchemaLocation, response);
-				}
+				/*}*/
 
 			} else if (type == DoNotificationDocument.type) {
 				log.info("DoNotification request from: "
 						+ request.getRemoteAddr());
 				DoNotificationDocument dnd = (DoNotificationDocument) xobj;
-				isValid = dnd.validate(validationOptions);
+				/*isValid = dnd.validate(validationOptions);
 				if (!isValid) {
 					throw this.createInvalidRequestException(validationErrors,
 							this.excLevel, this.ogcExcSchemaLocation, response);
-				} else {
+				} else {*/
 					DoNotificationResponseDocument dnrd = messageHandler
 							.doNotification(dnd);
 					WNSUtil
 							.sendResponse(dnrd, this.wnsSchemaLocation,
 									response);
-				}
+				/*}*/
 
 			} else if (type == GetMessageDocument.type) {
 				log.info("GetMEssage request from: " + request.getRemoteAddr());
 				GetMessageDocument gmd = (GetMessageDocument) xobj;
 				isValid = gmd.validate(validationOptions);
-				if (!isValid) {
+				/*if (!isValid) {
 					throw this.createInvalidRequestException(validationErrors,
 							this.excLevel, 
 							this.ogcExcSchemaLocation,
 							response);
-				} else {
+				} else {*/
 					GetMessageResponseDocument gmrd = messageHandler.getMessage(gmd);
 					WNSUtil.sendResponse(gmrd,
 							this.wnsSchemaLocation,
 							response);
-				}
+				/*}*/
 
 			} else {
 				// unknown request
